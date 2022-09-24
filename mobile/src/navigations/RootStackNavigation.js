@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Initializer from "./Initializer";
+import Initializer from "./initializer";
 import LoginScreen from './../screens/LoginScreen';
 import SignupScreen from './../screens/SignupScreen';
 
