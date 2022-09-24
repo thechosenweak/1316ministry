@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Initializer from "./Initializer";
 import LoginScreen from './../screens/LoginScreen';
+import SignupScreen from './../screens/SignupScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,10 @@ export default function RootStackNavigation(){
                         <Stack.Screen
                             name="LoginScreen"
                             component={LoginScreen}
+                        />
+                        <Stack.Screen
+                            name="SignupScreen"
+                            component={SignupScreen}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>

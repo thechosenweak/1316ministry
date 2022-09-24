@@ -6,12 +6,10 @@ import { enableScreens } from 'react-native-screens';
 
 enableScreens();
 
-function App() {
+export default function App() {
   return (
     <Provider store={Store}>
       <RootStackNavigation />
     </Provider>
   );
 };
-
-export default App;

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import CardDataSlice from './CounterSlice';
+import AppDataSlice from './AppDataSlice';
 
 export const Store = configureStore({
   reducer: {
-    cardData: CardDataSlice
+    appData: AppDataSlice
   },
 })
