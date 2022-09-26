@@ -15,9 +15,9 @@ export default function LoginScreen({navigation}){
 
                 <View style={styles.accountCont}>
 
-                    <TextInput style={styles.inputLiner} placeholder="Email ID"/>
+                    <TextInput style={styles.inputLiner} maxLength ={100} placeholder="Email ID"/>
 
-                    <TextInput style={styles.inputLiner} placeholder="Password"/>
+                    <TextInput style={styles.inputLiner} maxLength ={50} placeholder="Password"/>
 
                     <TouchableOpacity style={styles.forgotCont}>
                         <Text style={styles.forgotFont}>Forgot Password</Text>
@@ -37,7 +37,7 @@ export default function LoginScreen({navigation}){
 
                     <View style={styles.regCont}>
                         <Text>Not a user yet? </Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('SignupScreen')}>
                             <Text style={styles.regFont}> Register</Text>
                         </TouchableOpacity>
                     </View>
