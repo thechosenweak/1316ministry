@@ -13,7 +13,6 @@ export default StyleSheet.create({
         marginVertical:15,
         alignItems:'center',
         justifyContent:'center',
-        borderWidth:1,
     },
 
     imgStyle:{
