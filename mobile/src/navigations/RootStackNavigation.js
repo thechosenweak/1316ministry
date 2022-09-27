@@ -7,6 +7,7 @@ import Initializer from "./initializer";
 import LoginScreen from './../screens/LoginScreen';
 import SignupScreen from './../screens/SignupScreen';
 import LandingScreen from "../screens/LandingScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 
 
@@ -34,6 +35,10 @@ export default function RootStackNavigation(){
                         <Stack.Screen
                             name="SignupScreen"
                             component={SignupScreen}
+                        />
+                        <Stack.Screen
+                            name="HomeScreen"
+                            component={HomeScreen}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>

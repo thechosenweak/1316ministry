@@ -23,7 +23,7 @@ export default function LoginScreen({navigation}){
                                     
                                     <View style={{marginTop:20}}>
                                         <View style={{alignItems:"center"}}>
-                                            <AppButton text="Login" style={{color:"White",fontWeight:"bold",fontSize:25}}/>
+                                            <AppButton text="Login" onPress={()=>navigation.navigate("HomeScreen")} style={{color:"White",fontWeight:"bold",fontSize:25}}/>
                                         </View>
                                     </View>
                                 </View>
