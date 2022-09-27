@@ -6,6 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Initializer from "./initializer";
 import LoginScreen from './../screens/LoginScreen';
 import SignupScreen from './../screens/SignupScreen';
+import LandingScreen from "../screens/LandingScreen";
+
+
 
 const Stack = createStackNavigator();
 
@@ -19,7 +22,11 @@ export default function RootStackNavigation(){
                         screenOptions={{
                             headerShown: false
                         }}
-                    >
+                        >
+                        <Stack.Screen
+                            name="LandingScreen"
+                            component={LandingScreen}
+                        />
                         <Stack.Screen
                             name="LoginScreen"
                             component={LoginScreen}

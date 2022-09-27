@@ -15,11 +15,16 @@ export default StyleSheet.create({
         marginVertical:15,
         alignItems:'center',
         justifyContent:'center',
+        
     },
 
     imgStyle:{
         height:200,
         width:200,
+        borderRadius:100,
+        borderWidth:4,
+        borderColor:"#F5BC17",
+        
     },
     
     headerFont:{
