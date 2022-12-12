@@ -1,0 +1,35 @@
+.container-sidebar {
+    display: flex;
+}
+
+.logo {
+    width: 60%;
+    margin-left: 35px;
+}
+
+.itemText {
+    color: black;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #666666;
+}
+
+.navLink:hover{
+    color: #000;
+    font-weight: bold;
+}
+
+.menuName {
+    margin-left: 12px;
+    font-size: 16px;
+}
+
+.active {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
