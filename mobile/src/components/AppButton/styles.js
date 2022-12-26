@@ -5,7 +5,7 @@ export default StyleSheet.create({
         backgroundColor: 'green', 
         padding: 12,
         alignItems: 'center', 
-        borderRadius: 12
+        borderRadius: 12,
     },
     textStyle: {
         color: 'white', 

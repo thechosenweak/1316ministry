@@ -2,7 +2,6 @@ import React from 'react';
 import { Text } from 'react-native';
 import { AppCamera } from '../../components';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -58,7 +57,7 @@ export default function MainStackNavigation() {
           options={{
               tabBarLabel: <Text>Account</Text>,
               tabBarIcon: (props) => ( 
-                <MaterialIcons name={props.focused ? "notifications-active" : "notifications-none"} size={24} style={{color:props.focused ? "#1877F2" : "gray"}} /> 
+                <MaterialCommunityIcons name={props.focused ? "account" : "account-outline"} size={24} style={{color:props.focused ? "#1877F2" : "gray"}}/> 
               ),
           }}
         />
