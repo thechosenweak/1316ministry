@@ -3,12 +3,12 @@ import styles from './styles';
 import { View, Text } from "react-native";
 import { AppBar } from "../../../components";
 
-export default function DashboardScreen({navigation}){
+export default function AccountScreen({navigation}){
     
     return (
         <View>
             <AppBar 
-                screenTitle="Dashboard"
+                screenTitle="Account"
                 onBackPress={() => navigation.goBack()}
             />
         </View>

@@ -4,6 +4,7 @@ import RootStackNavigation from './navigations/RootStackNavigation';
 import {enableScreens} from 'react-native-screens';
 import { PersistGate } from 'redux-persist/integration/react';
 import reduxStore from './redux/store';
+import LoadingScreen from './screens/LoadingScreen';
 
 enableScreens();
 
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<LoadingScreen />} persistor={persistor}>
         <RootStackNavigation />
       </PersistGate>
     </Provider>
