@@ -1,15 +1,23 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { Store } from './redux/Store';
+import {Provider} from 'react-redux';
 import RootStackNavigation from './navigations/RootStackNavigation';
-import { enableScreens } from 'react-native-screens';
+import {enableScreens} from 'react-native-screens';
+import { PersistGate } from 'redux-persist/integration/react';
+import reduxStore from './redux/store';
 
 enableScreens();
 
-export default function App() {
+function App() {
+
+  const { store, persistor } = reduxStore();
+
   return (
-    <Provider store={Store}>
-      <RootStackNavigation />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <RootStackNavigation />
+      </PersistGate>
     </Provider>
   );
-};
+}
+
+export default App;

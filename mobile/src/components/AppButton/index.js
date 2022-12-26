@@ -1,16 +1,20 @@
 import React from 'react';
-import { Touchable, TouchableOpacity, View, Text } from 'react-native';
 import styles from './styles';
+import { TouchableOpacity, View, Text } from 'react-native';
 
-export default AppButton = ({text,onPress,style}) => {
-
+const AppButton = ({
+    name,
+    onPress,
+    textStyle,
+    containerStyle
+}) => {
     return (
-        <>
-            <View style ={{backgroundColor:"white", borderRadius:30, height:60, width:"70%", backgroundColor:"#F4E25B"}}>
-                <TouchableOpacity onPress={onPress} style={{justifyContent:"center",alignItems:"center",flex:1}}>
-                    <Text style ={style}>{text}</Text>
-                </TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
+            <View style={[styles.containerStyle, containerStyle]}>
+                <Text style={[styles.textStyle, textStyle]}>{name}</Text>
             </View>
-        </>
+        </TouchableOpacity>
     )
 }
+
+export default AppButton;

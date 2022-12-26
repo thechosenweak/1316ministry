@@ -1,19 +1,32 @@
 import { View, Text, TextInput } from 'react-native';
 import React from 'react';
 
-const AppTextInput = ({placeholder,onChange,defaultValue,style,secureTextEntry}) => {
+const AppTextInput = ({
+  placeholder,
+  placeholderTextColor,
+  onChangeText,
+  defaultValue,
+  secureTextEntry,
+  containerStyle,
+  textInputStyle,
+  title,
+  isValid=true
+}) => {
   return (
-    <View style={{backgroundColor:"#E7E8E8",borderRadius:5,marginTop:10,marginBottom:10}}>
-        <View style={{padding:5,marginLeft:10}}>
-            <TextInput 
-                placeholderTextColor="black"
-                placeholder={placeholder}
-                onChange ={onChange}
-                defaultValue ={defaultValue}
-                style={style}
-                secureTextEntry={secureTextEntry}
-            />
-      </View>
+    <View style={[containerStyle]}>
+        {
+          title && <Text style={{fontWeight: 'bold', marginBottom: 6, color: isValid ? '#616161' : 'red'}}>{title}</Text>
+        }
+        <View style={{borderRadius: 12, backgroundColor: '#f7f7f7', padding: 8, borderWidth: 1, borderColor: isValid ? '#f7f7f7' : 'red'}}>
+          <TextInput 
+              placeholderTextColor={placeholderTextColor}
+              placeholder={placeholder}
+              onChangeText={onChangeText}
+              defaultValue={defaultValue}
+              style={[{padding: 0}, textInputStyle]}
+              secureTextEntry={secureTextEntry}
+          />
+        </View>
     </View>
   )
 }

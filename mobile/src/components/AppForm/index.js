@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 
-export default AppForm = () => {
+const AppForm = () => {
 
     return (
         <>
@@ -9,3 +9,5 @@ export default AppForm = () => {
         </>
     )
 }
+
+export default AppForm;

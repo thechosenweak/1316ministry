@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 
-export default AppCamera = () => {
+const AppCamera = () => {
 
     return (
         <>
@@ -9,3 +9,5 @@ export default AppCamera = () => {
         </>
     )
 }
+
+export default AppCamera;
