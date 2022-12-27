@@ -10,7 +10,7 @@ import NavigatorAccount from './NavigatorAccount';
 
 const Tab = createMaterialBottomTabNavigator();
 
-export default function MainStackNavigation() {
+export default function MainStack() {
 
   const [cameraVisible, setCameraVisible] = React.useState(false);
 

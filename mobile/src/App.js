@@ -1,5 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
+import {Provider as PaperProvider} from 'react-native-paper';
 import RootStackNavigation from './navigations/RootStackNavigation';
 import {enableScreens} from 'react-native-screens';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -15,7 +16,9 @@ function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={<LoadingScreen />} persistor={persistor}>
-        <RootStackNavigation />
+        <PaperProvider>
+          <RootStackNavigation />
+        </PaperProvider>
       </PersistGate>
     </Provider>
   );
