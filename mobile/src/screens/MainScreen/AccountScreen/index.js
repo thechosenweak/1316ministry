@@ -4,6 +4,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { AppBar, AppButton } from "../../../components";
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../../../redux/reducer/User';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function AccountScreen({navigation}){
     
@@ -28,13 +29,39 @@ export default function AccountScreen({navigation}){
                     <Text style={{marginLeft: 12, fontWeight: "bold", fontSize: 20, color: 'green'}}>Abcd efghi</Text>
                 </View>
                 <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1}}>
-                        <Text>View Profile</Text>
+                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+                        <Text style={{flex: 1}}>View Profile</Text>
+                        <AntDesign name={"arrowright"} size={24} />
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1}}>
-                        <Text>Logout</Text>
+                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+                        <Text style={{flex: 1}}>Members</Text>
+                        <AntDesign name={"arrowright"} size={24} />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+                        <Text style={{flex: 1}}>Role</Text>
+                        <AntDesign name={"arrowright"} size={24} />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+                        <Text style={{flex: 1}}>Small group</Text>
+                        <AntDesign name={"arrowright"} size={24} />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+                        <Text style={{flex: 1}}>Attendance</Text>
+                        <AntDesign name={"arrowright"} size={24} />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+                        <Text style={{flex: 1}}>Logout</Text>
+                        <AntDesign name={"arrowright"} size={24} />
                     </View>
                 </TouchableOpacity>
             </View>
