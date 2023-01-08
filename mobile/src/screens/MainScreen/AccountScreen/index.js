@@ -1,14 +1,16 @@
 import React from "react";
 import styles from './styles';
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image } from "react-native";
 import { AppBar, AppButton } from "../../../components";
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../../../redux/reducer/User';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function AccountScreen({navigation}){
     
     const dispatch = useDispatch();
+    const rightIcon = <AntDesign name={"right"} size={24} />
 
     const onLogout = () => {
         dispatch(setUserData(null))
@@ -28,42 +30,47 @@ export default function AccountScreen({navigation}){
                     />
                     <Text style={{marginLeft: 12, fontWeight: "bold", fontSize: 20, color: 'green'}}>Abcd efghi</Text>
                 </View>
-                <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-                        <Text style={{flex: 1}}>View Profile</Text>
-                        <AntDesign name={"arrowright"} size={24} />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-                        <Text style={{flex: 1}}>Members</Text>
-                        <AntDesign name={"arrowright"} size={24} />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-                        <Text style={{flex: 1}}>Role</Text>
-                        <AntDesign name={"arrowright"} size={24} />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-                        <Text style={{flex: 1}}>Small group</Text>
-                        <AntDesign name={"arrowright"} size={24} />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-                        <Text style={{flex: 1}}>Attendance</Text>
-                        <AntDesign name={"arrowright"} size={24} />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <View style={{flexDirection: 'row', padding: 12, backgroundColor: 'white', marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-                        <Text style={{flex: 1}}>Logout</Text>
-                        <AntDesign name={"arrowright"} size={24} />
-                    </View>
-                </TouchableOpacity>
+                <AppButton 
+                    name="View Profile"
+                    textStyle={styles.textButtonStyle}
+                    containerStyle={styles.buttonStyle} 
+                    rightIcon={rightIcon}
+                />
+                <View>
+                    <View style={{height:12}} />
+                    <Text style={{fontWeight: "bold", marginBottom: 6, marginLeft: 6, fontSize: 15}}>Admin</Text>
+                    <AppButton 
+                        name="Members"
+                        textStyle={styles.textButtonStyle}
+                        containerStyle={styles.buttonStyle} 
+                        rightIcon={rightIcon}
+                    />
+                    <AppButton 
+                        name="Role"
+                        textStyle={styles.textButtonStyle}
+                        containerStyle={styles.buttonStyle} 
+                        rightIcon={rightIcon}
+                    />
+                    <AppButton 
+                        name="Small group"
+                        textStyle={styles.textButtonStyle}
+                        containerStyle={styles.buttonStyle} 
+                        rightIcon={rightIcon}
+                    />
+                    <AppButton 
+                        name="Attendance"
+                        textStyle={styles.textButtonStyle}
+                        containerStyle={styles.buttonStyle} 
+                        rightIcon={rightIcon}
+                    />
+                </View>
+                <View style={{height:12}} />
+                <AppButton 
+                    name="Logout"
+                    textStyle={[styles.textButtonStyle, {color: 'red'}]}
+                    containerStyle={styles.buttonStyle} 
+                    rightIcon={<MaterialCommunityIcons name={"logout"} size={24} />}
+                />
             </View>
         </>
     )

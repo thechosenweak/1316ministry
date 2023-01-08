@@ -6,12 +6,14 @@ const AppButton = ({
     name,
     onPress,
     textStyle,
-    containerStyle
+    containerStyle,
+    rightIcon
 }) => {
     return (
         <TouchableOpacity onPress={onPress}>
             <View style={[styles.containerStyle, containerStyle]}>
                 <Text style={[styles.textStyle, textStyle]}>{name}</Text>
+                {rightIcon}
             </View>
         </TouchableOpacity>
     )

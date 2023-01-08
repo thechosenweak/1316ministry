@@ -11,5 +11,18 @@ export default StyleSheet.create({
         overflow: 'hidden',
         borderWidth: 2,
         borderColor: 'green'
+    },
+    textButtonStyle: {
+        color: 'gray', 
+        fontWeight: 'normal', 
+        flex: 1
+    },
+    buttonStyle: {
+        flexDirection: 'row', 
+        padding: 12, 
+        backgroundColor: 'white', 
+        marginTop: 1, 
+        marginBottom: 1, 
+        alignItems: 'center'
     }
 })
