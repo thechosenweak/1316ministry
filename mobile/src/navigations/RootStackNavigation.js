@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import LandingStack from "./LandingStack";
 import MainStack from "./MainStack";
-import Initializer from "./Initializers";
+import Initializer from "./Initializer";
 
 export default function RootStackNavigation(){
     
