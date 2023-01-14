@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
-import { AccountScreen } from '../../screens/MainScreen';
+import { AccountScreen, AttendanceScreen, GroupScreen, MemberScreen, RoleScreen } from '../../screens/MainScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +14,10 @@ const NavigatorAccount = () => {
             }}
         >
             <Stack.Screen name="Account" component={AccountScreen} />  
+            <Stack.Screen name="Attendance" component={AttendanceScreen} />  
+            <Stack.Screen name="Group" component={GroupScreen} />  
+            <Stack.Screen name="Member" component={MemberScreen} />  
+            <Stack.Screen name="Role" component={RoleScreen} />  
         </Stack.Navigator>
     );
 }
