@@ -14,10 +14,12 @@ const NavigatorAccount = () => {
             }}
         >
             <Stack.Screen name="Account" component={AccountScreen} />  
-            <Stack.Screen name="Attendance" component={AttendanceScreen} />  
-            <Stack.Screen name="Group" component={GroupScreen} />  
-            <Stack.Screen name="Member" component={MemberScreen} />  
-            <Stack.Screen name="Role" component={RoleScreen} />  
+            <Stack.Group screenOptions={{ ...TransitionPresets.SlideFromRightIOS }}> 
+                <Stack.Screen name="Attendance" component={AttendanceScreen} />  
+                <Stack.Screen name="Group" component={GroupScreen} />  
+                <Stack.Screen name="Member" component={MemberScreen} />  
+                <Stack.Screen name="Role" component={RoleScreen} />  
+            </Stack.Group>
         </Stack.Navigator>
     );
 }
