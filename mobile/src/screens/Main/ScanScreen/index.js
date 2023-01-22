@@ -1,11 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export default function DashboardScreen({ navigation }){
-
+export default function ScanScreen(){
     return(
         <View>
-            <Text>DashboardScreen</Text>
+            <Text>ScanScreen</Text>
         </View>
     )
 }

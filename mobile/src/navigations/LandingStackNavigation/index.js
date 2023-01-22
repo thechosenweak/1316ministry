@@ -5,7 +5,6 @@ import { LoginScreen } from '../../screens/Landing';
 const Stack = createStackNavigator();
 
 const LandingStackNavigation = () => {
-
     return (
         <Stack.Navigator 
             screenOptions={{
