@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
+import Ripple from 'react-native-material-ripple';
 
 const AppTabBar = ({ 
     state, 
@@ -7,7 +8,7 @@ const AppTabBar = ({
     navigation 
 }) => {
     return(
-        <View style={{ flexDirection: 'row', padding: 8 }}>
+        <View style={{ flexDirection: 'row' }}>
             {state.routes.map((route, index) => {
             const { options } = descriptors[route.key];
             const icon = options.tabBarIcon ? options.tabBarIcon : null;
@@ -39,21 +40,18 @@ const AppTabBar = ({
             };
     
             return (
-                <TouchableOpacity
+                <Ripple
                     key={index}
-                    accessibilityRole="button"
-                    accessibilityState={isFocused ? { selected: true } : {}}
-                    accessibilityLabel={options.tabBarAccessibilityLabel}
-                    testID={options.tabBarTestID}
                     onPress={onPress}
                     onLongPress={onLongPress}
-                    style={{ flex: 1, alignItems: 'center' }}
-                >   
+                    style={{ flex: 1, alignItems: 'center', padding: 8 }}
+                    testID={options.tabBarTestID}
+                >
                     {icon()}
                     <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
                         {label}
                     </Text>
-                </TouchableOpacity>
+                </Ripple>
             );
         })}
       </View>

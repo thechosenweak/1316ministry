@@ -11,7 +11,7 @@ const RootStackNavigator = () => {
 
     const RootStack = () => (
         <NavigationContainer>
-            {userData === null ? (
+            {userData !== null ? (
                 <LandingStackNavigation />
             ) : (
                 <MainStackNavigation />
