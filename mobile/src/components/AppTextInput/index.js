@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, TextInput } from "react-native";
+import styles from './styles';
+import { View, TextInput } from "react-native";
 
 const AppTextInput = ({
     placeholder,
@@ -12,19 +13,10 @@ const AppTextInput = ({
     isEmpty
 }) => {
     return(
-        <View style={{
-                backgroundColor: '#fff', 
-                borderRadius: 8, 
-                marginBottom: 8, 
-                flexDirection: 'row', 
-                alignItems: 'center', 
-                paddingLeft: 8,
-                borderStartWidth: 3,
-                borderColor: isEmpty ? '#363636' : '#64C1EF'
-            }}>
+        <View style={[styles.container, {borderColor: isEmpty ? '#363636' : '#64C1EF'}]}>
             {icon}
             <TextInput 
-                style={[{color: '#363636', flex: 1}, textInputStyle]}
+                style={[styles.textInput, textInputStyle]}
                 onChangeText={onChangeText}
                 value={value}
                 placeholder={placeholder}

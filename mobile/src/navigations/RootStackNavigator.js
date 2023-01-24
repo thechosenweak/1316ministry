@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import MainStackNavigation from './MainStackNavigation';
 import LandingStackNavigation from './LandingStackNavigation';
+import Toast from 'react-native-toast-message';
+import { APP_TOAST } from '../constants';
 
 const RootStackNavigator = () => {
   
     const userData = useSelector((state) => state.user.userData);
+    const [initToast, setInitToast] = React.useState(false);
 
     const RootStack = () => (
         <NavigationContainer>
@@ -19,9 +21,22 @@ const RootStackNavigator = () => {
         </NavigationContainer>
     )
 
+    setTimeout(() => setInitToast(true), 550);
+
     return (
         <>
             <RootStack />
+            {
+                initToast && (
+                    <Toast
+                        position={APP_TOAST.position}
+                        topOffset={APP_TOAST.topOffset}
+                        bottomOffset={APP_TOAST.bottomOffset}
+                        config={APP_TOAST.config}
+                        visibilityTime={APP_TOAST.visibilityTime}
+                    />
+                )
+            }
         </>
     )
 }
