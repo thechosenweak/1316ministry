@@ -6,16 +6,32 @@ const AppTextInput = ({
     value,
     onChangeText,
     textInputStyle,
-    keyboardType
+    keyboardType,
+    secureTextEntry,
+    icon,
+    isEmpty
 }) => {
     return(
-        <TextInput 
-            style={textInputStyle}
-            onChangeText={onChangeText}
-            value={value}
-            placeholder={placeholder}
-            keyboardType={keyboardType}
-        />
+        <View style={{
+                backgroundColor: '#fff', 
+                borderRadius: 8, 
+                marginBottom: 8, 
+                flexDirection: 'row', 
+                alignItems: 'center', 
+                paddingLeft: 8,
+                borderStartWidth: 3,
+                borderColor: isEmpty ? '#363636' : '#64C1EF'
+            }}>
+            {icon}
+            <TextInput 
+                style={[{color: '#363636', flex: 1}, textInputStyle]}
+                onChangeText={onChangeText}
+                value={value}
+                placeholder={placeholder}
+                keyboardType={keyboardType}
+                secureTextEntry={secureTextEntry}
+            />
+        </View>
     )
 }
 
