@@ -15,6 +15,7 @@ const AppButton = ({
     const [isPressed, setIsPressed] = React.useState(false);
 
     const Press = () => {
+        if(!onPress) return;
         if(isPressed) return;
 
         setIsPressed(true);
