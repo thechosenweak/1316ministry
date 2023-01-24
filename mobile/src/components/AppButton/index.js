@@ -7,17 +7,32 @@ const AppButton = ({
     onPress,
     onLongPress,
     contentStyle,
-    textStyle
+    textStyle,
+    icon,
+    rightIcon
 }) => {
+
+    const [isPressed, setIsPressed] = React.useState(false);
+
+    const Press = () => {
+        if(isPressed) return;
+
+        setIsPressed(true);
+        setTimeout(() => {
+            setIsPressed(false);
+            onPress();
+        }, 200)
+    }
+
     return(
         <Ripple
-            onPress={onPress}
+            onPress={Press}
             onLongPress={onLongPress}
-            style={[{backgroundColor: '#64C1EF', padding: 12}, contentStyle]}
+            style={[{backgroundColor: '#64C1EF', padding: 12, flexDirection: 'row'}, contentStyle]}
         >
-            <View>
-                <Text style={[{textAlign: 'center', color: 'white'}, textStyle]}>{name}</Text>
-            </View>
+            {icon}
+            <Text style={[{color: 'white', flex: 1}, {marginLeft: icon ? 8 : 0}, textStyle]}>{name}</Text>
+            {rightIcon}
         </Ripple>
     )
 }

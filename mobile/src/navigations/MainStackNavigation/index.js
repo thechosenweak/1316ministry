@@ -35,7 +35,7 @@ export default function MainStackNavigation() {
         name="ScanScreen" 
         component={BlankScreen} 
         options={{
-          tabBarLabel: "Scan",
+          tabBarLabel: "QR",
           tabBarIcon: (props) => (
             <MaterialCommunityIcons name="qrcode-scan" size={24} />
           ),

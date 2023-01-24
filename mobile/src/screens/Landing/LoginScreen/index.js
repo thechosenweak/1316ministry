@@ -2,6 +2,7 @@ import React from "react";
 import { View, Image } from "react-native";
 import { AppButton, AppTextInput } from '../../../components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 import Toast from 'react-native-toast-message';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../../../redux/reducer/User';
@@ -55,6 +56,7 @@ export default function LoginScreen(){
                 <AppButton 
                     contentStyle={{borderRadius: 6, marginTop: 12}}
                     name={'Login'}
+                    rightIcon={<Feather name="log-in" size={21} color="#fff" />}
                     onPress={onLogin}
                 />
             </View>

@@ -8,6 +8,7 @@ export default StyleSheet.create({
         borderColor: '#cccccc', 
         alignItems: 'center',
         flexDirection: 'row',
-        paddingRight: 17
+        paddingRight: 17,
+        backgroundColor: '#fff'
     },
 })

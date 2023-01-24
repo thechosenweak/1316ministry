@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './styles';
 import { View, Text, TouchableOpacity } from "react-native";
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const AppBar = ({
     title,
@@ -16,7 +16,7 @@ const AppBar = ({
                         style={{width: 40, alignItems: 'center'}}
                         onPress={onBackPress}
                     >
-                        <AntDesign name="left" size={21} />
+                        <MaterialIcons name="keyboard-arrow-left" size={24} />
                     </TouchableOpacity>
                 )
             }
