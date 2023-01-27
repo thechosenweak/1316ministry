@@ -4,6 +4,7 @@ import AppButton from "./AppButton";
 import AppTextInput from "./AppTextInput";
 import AppToastMessage from "./AppToastMessage";
 import AppBar from "./AppBar";
+import AppCamera from "./AppCamera";
 
 export {
     AppAlert,
@@ -11,5 +12,6 @@ export {
     AppButton,
     AppTextInput,
     AppToastMessage,
-    AppBar
+    AppBar,
+    AppCamera
 }

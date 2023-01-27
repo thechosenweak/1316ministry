@@ -29,13 +29,15 @@ const AppTabBar = ({
                 const isFocused = state.index === index;
         
                 const onPress = () => {
-                    const event = navigation.emit({
-                        type: 'tabPress',
-                        target: route.key,
-                    });
-        
-                    if (!isFocused && !event.defaultPrevented) {
-                        navigation.navigate(route.name);
+                    if (!isFocused) {
+                        if(label === 'QR'){
+                            navigation.emit({
+                                type: 'tabPress',
+                                target: route.key,
+                            });
+                        } else {
+                            navigation.navigate(route.name);
+                        }
                     }
                 };
         
