@@ -7,8 +7,16 @@ LogBox.ignoreLogs([`ReactImageView: Image source "null" doesn't exist`]);
 
 const AppCamera = ({
     isVisible,
+    setIsVisible,
     onBackButtonPress,
+    onRead
 }) => {
+    const [isScanned, setIsScanned] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsScanned(false)
+    },[isVisible])
+
     return(
         <Modal 
             isVisible={isVisible} 
@@ -18,7 +26,13 @@ const AppCamera = ({
         >
             <CameraScreen
                 scanBarcode={true}
-                onReadCode={(event) => console.log(event.nativeEvent.codeStringValue)}
+                onReadCode={(event) => {
+                    if(!isScanned){
+                        setIsScanned(true)
+                        setIsVisible(false)
+                        onRead(event.nativeEvent.codeStringValue)
+                    }
+                }}
                 showFrame={true}
                 frameColor='white'
             />

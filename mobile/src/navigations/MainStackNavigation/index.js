@@ -60,7 +60,14 @@ export default function MainStackNavigation() {
           }}
         />
       </Tab.Navigator>
-      <AppCamera isVisible={cameraVisible} onBackButtonPress={() => setCameraVisible(false)}/>
+      <AppCamera 
+        isVisible={cameraVisible} 
+        setIsVisible={setCameraVisible}
+        onBackButtonPress={() => setCameraVisible(false)}
+        onRead={(code) => {
+          console.log(code)
+        }}
+      />
     </>
   );
 }
