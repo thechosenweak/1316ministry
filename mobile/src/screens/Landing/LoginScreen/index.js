@@ -6,6 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Toast from 'react-native-toast-message';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../../../redux/reducer/User';
+import { ApiPost, ApiGet } from '../../../services/AxiosInstance';
 
 export default function LoginScreen(){
 
@@ -14,23 +15,36 @@ export default function LoginScreen(){
     const [password, setPassword] = React.useState({text: '', isEmpty: true});
 
     const onLogin = () => {
-        if(username.text.trim() === ''){
-            Toast.show({
-                type: 'warning',
-                text1: 'Please enter username',
-            });
-        } else if(password.text.trim() === ''){
-            Toast.show({
-                type: 'warning',
-                text1: 'Please enter password',
-            });
-        } else {
-            Toast.show({
-                type: 'success',
-                text1: 'Successfully signed in',
-            });
-            dispatch(setUserData({fname: 'Yow!'}));
-        }
+        // if(username.text.trim() === ''){
+        //     Toast.show({
+        //         type: 'warning',
+        //         text1: 'Please enter username',
+        //     });
+        // } else if(password.text.trim() === ''){
+        //     Toast.show({
+        //         type: 'warning',
+        //         text1: 'Please enter password',
+        //     });
+        // } else {
+        //     Toast.show({
+        //         type: 'success',
+        //         text1: 'Successfully signed in',
+        //     });
+        //     dispatch(setUserData({fname: 'Yow!'}));
+        // }
+
+
+        // test api here . . . 
+        ApiPost('test_api_post', {
+            username: username, 
+            password: password
+        })
+        .then((response) => {
+            let result = response.data;
+            console.log(result)
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 
     return(
