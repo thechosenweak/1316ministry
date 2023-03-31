@@ -53,8 +53,8 @@ class Server {
       maxHttpBufferSize: 1e8,
     });
 
-    this.socketioRedis = require("socket.io-redis");
-    io.adapter(this.socketioRedis({ host: this.redisHost, port: this.redisPort }));
+    // this.socketioRedis = require("socket.io-redis");
+    // io.adapter(this.socketioRedis({ host: this.redisHost, port: this.redisPort }));
 
     // this.redis = require("redis");
     // this.rediscli = this.redis.createClient({ url: 'redis://127.0.0.1:6379' });
